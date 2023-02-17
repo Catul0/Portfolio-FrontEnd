@@ -22,7 +22,6 @@ export class PortadaComponent implements OnInit {
   ngOnInit(): void {
     this.personaService.getPersona().subscribe(data => {this.persona=data})
     this.variable=this.router.url;
-    console.log(this.variable);
     if((this.tokenService.getToken()) && (this.variable=="/home")){
       this.isLogged=true;
     }else{
