@@ -1,0 +1,47 @@
+<div class="card" style="padding-bottom: 35px;padding-top: 10px;  background-color: rgb(33,37,41); color: rgb(255, 255, 255);">
+    <div class="col-lg-2" style="margin-bottom: 35px;">
+        <button (click)="abrirAgragarHabilidad()" type="button" class="btn" *ngIf="isLogged"
+            style="position: absolute; right: 3px; top: 3px; z-index: 3;color: white; background-color: #777; border-color: #777;">
+            {{text}}
+        </button>
+    </div>
+    <h3 class="card-header text-center text" style="margin-top: 20px;margin-bottom: 60px;">
+        Habilidades
+    </h3>
+    <app-agregar-habilidad *ngIf="desplegarHab and isLogged"></app-agregar-habilidad>
+    <div class="row" style="margin-top: 5px;" style="margin-left: 10px;margin-right:10px;margin-bottom: 15px;">
+        <div *ngFor="let habilidad of habilidad " class="col-sm-4 col-md-4 col-lg-4">
+            <div class="col" style="margin-top: 5px;">
+                <div class="card">
+                    <div *ngIf="isLogged" routerLink="/sd3k/{{habilidad.id}}" class="btn btn-primary"
+                        style="position: absolute; right: 48px; top: 3px; z-index: 3; background-color: #777; border-color: #777;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-pen" viewBox="0 0 16 16">
+                            <path
+                                d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z" />
+                        </svg>
+                    </div>
+                    <div *ngIf="isLogged" (click)="deleteHab(habilidad.id)" class="btn btn-primary"
+                        style="position: absolute; right: 3px; top: 3px; z-index: 3; background-color: #777; border-color: #777;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-x-lg" viewBox="0 0 16 16">
+                            <path
+                                d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+                        </svg>
+                    </div>
+                    <div class="card-header" style="color: rgb(0, 0, 0);">
+                        <h5 class="card-title">{{habilidad.nombreSkill}}</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">{{habilidad.descripcionSkill}}</li>
+                            <li style="background-color: {{obtenerColor(habilidad)}};" class="list-group-item">
+                                Nivel: {{habilidad.nivelSkill}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

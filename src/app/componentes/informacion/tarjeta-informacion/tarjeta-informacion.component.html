@@ -1,0 +1,10 @@
+<div class="card" style="color: rgb(0, 0, 0);">
+    <div style="margin-bottom: 35px;" *ngIf="isLogged" routerLink="/sjd89/{{persona.id}}" class="btn btn-primary"
+        style="position: absolute; right: 3px; top: 3px; height:38px; z-index: 3; background-color: #777; border-color: #777;">
+        <p><i class="bi bi-pen"></i>Editar Informacion Personal</p>
+    </div>
+    <h3  class="card-header text-center text" style="margin-top: 60px;">Sobre Mi</h3>
+    <div class="card-body">
+        {{persona.sobreMi}}
+    </div>
+</div>

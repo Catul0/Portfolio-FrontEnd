@@ -1,0 +1,32 @@
+<nav class="navbar navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+        <img src="https://argentinaprograma.inti.gob.ar/pluginfile.php/1/theme_moove/logo/1674868095/Diseño%20sin%20título%20%2817%29.png"
+            style="height: 50px;" alt="">
+        <button routerLink="/home" type="button" class="btn btn-primary"
+            style="background-color: #777; border-color: #777;" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                <path
+                    d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z" />
+            </svg>
+        </button>
+    </div>
+</nav>
+<app-portada></app-portada>
+<div class="card" *ngIf="persona" >
+    <form>
+        <div class="form-group">
+            <h2>Cambiar Foto de Perfil</h2>(debe esperar que se cargue la vista previa de la imagen seleccionada, una vez cargada la vista previa la imagen ya se ha guardado)<p></p>
+            <input type="file" class="form-control" id="img" name="img"  [(ngModel)]="persona.img" (change)="cambiarImagen($event)" accept=".png,.jpg,.jpeg">
+        </div>
+        
+        <div class="imagen">
+            <img [src]="imagenService.url" width="200px">
+        </div>
+        <button routerLink="/home" class="btn btn-block" style="width: 100%; margin-left: 0%;">
+            Volver al Inicio
+        </button>
+    </form>
+    
+</div>

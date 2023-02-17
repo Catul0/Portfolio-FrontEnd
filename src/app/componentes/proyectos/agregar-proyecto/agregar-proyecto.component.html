@@ -1,0 +1,23 @@
+<form class="add-form" (ngSubmit)="onCreateProyecto()" novalidate #f="ngForm" style="width: 98%; margin-left: 1%;">
+    <div class="form-control">
+        <label for="nombreProyecto">Nombre del Proyecto</label>
+        <input type="text" class="form-control" name="nombreProyecto" id="nombreProyecto" [(ngModel)]="nombreProyecto"
+            required placeholder="Añade un numbre a la Experiencia">
+    </div>
+    <div class="form-control">
+        <label for="descripcionProyecto">Descripcion</label>
+        <textarea class="form-control" aria-label="With textarea" name="descripcionProyecto" id="descripcionProyecto"
+            [(ngModel)]="descripcionProyecto" required placeholder="Aqui va la descripcion del proyecto"></textarea>
+    </div>
+    <div class="form-control">
+        <label for="fechaProyecto">Periodo de Trabajo en el Proyecto</label>
+        <input type="text" class="form-control" name="fechaProyecto" id="fechaProyecto" [(ngModel)]="fechaProyecto"
+            required placeholder="Añade un periodo de trabajo en este proyecto">
+    </div>
+    <div class="form-control">
+        <label for="linkProyecto">Link Referido</label>
+        <input type="text" class="form-control" name="linkProyecto" id="linkProyecto" [(ngModel)]="linkProyecto"
+            required placeholder="Añade una direccion para ir a este proyecto o pagina">
+    </div>
+    <input type="submit" value="Guardar Cambios" class="btn btn-block" style="width: 100%; margin-left: 0%;">
+</form>

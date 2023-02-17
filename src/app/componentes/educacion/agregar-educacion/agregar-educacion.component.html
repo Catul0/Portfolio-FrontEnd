@@ -1,0 +1,40 @@
+<form 
+    class="add-form"
+    (ngSubmit)="onCreateEducacion()" novalidate #f="ngForm"
+    style="width: 98%; margin-left: 1%;"
+>
+    <div class="form-control">
+        <label for="nombreExperiencia">Titulo Academico</label>
+        <input 
+            type="text" 
+            class="form-control"
+            name="titulo" 
+            id="titulo" 
+            [(ngModel)]="titulo" required
+            placeholder="Añade un Titulo"
+        >
+    </div>
+    <div class="form-control">
+        <label for="nombreExperiencia">Institucion Academica</label>
+        <input 
+            type="text" 
+            class="form-control"
+            name="institucion" 
+            id="institucion" 
+            [(ngModel)]="institucion" required
+            placeholder="Añade nombre a la Institucion Academica"
+        >
+    </div>
+    <div class="form-control">
+        <label for="descripcion">Descripcion</label>
+        <input 
+            type="text"
+            class="form-control" 
+            name="descripcionExpdescripcioneriencia" 
+            id="descripcion"
+            [(ngModel)]="descripcion" required
+            placeholder="Añade una nueva Descripcion de Educacion"
+        >
+    </div>
+    <input type="submit" value="Guardar Cambios" class="btn btn-block" style="width: 100%; margin-left: 0%;">
+</form>
