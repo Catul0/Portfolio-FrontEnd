@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Persona } from 'src/app/model/persona';
 import { PersonaService } from 'src/app/service/persona.service';
+import { TokenService } from 'src/app/service/token.service';
 @Component({
   selector: 'app-edit-info',
   templateUrl: './edit-info.component.html',
@@ -12,10 +13,16 @@ export class EditInfoComponent implements OnInit {
   constructor(
     private personaService:PersonaService,
     private activatedRouter:ActivatedRoute,
-    private router:Router
+    private router:Router,
+    private tokenService:TokenService
   ) { }
-
+  isLogged=false;
   ngOnInit(): void {
+    if(this.tokenService.getToken()){
+      this.isLogged=true;
+    }else{
+      this.isLogged=false;
+    }
     const id = this.activatedRouter.snapshot.params['id'];
     this.personaService.detail(id).subscribe(
       data => {

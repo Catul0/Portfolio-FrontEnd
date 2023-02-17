@@ -7,7 +7,8 @@ import { Proyectos } from '../model/proyectos';
   providedIn: 'root'
 })
 export class ProyectosService {
-  proURL = 'http://localhost:8080/proyectos/'
+  proURL = 'https://backend-ze76.onrender.com/proyectos/'
+  //proURL = 'http://localhost:8080/proyectos/'
   constructor(private httpClient: HttpClient) { }
   public lista():Observable<Proyectos[]>{
     return this.httpClient.get<Proyectos[]>(this.proURL + 'lista');

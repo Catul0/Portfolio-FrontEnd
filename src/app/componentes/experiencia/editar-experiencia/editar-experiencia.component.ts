@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Experiencia } from 'src/app/model/experiencia';
 import { ExperienciaService } from 'src/app/service/experiencia.service';
+import { TokenService } from 'src/app/service/token.service';
 @Component({
   selector: 'app-editar-experiencia',
   templateUrl: './editar-experiencia.component.html',
@@ -13,10 +14,16 @@ export class EditarExperienciaComponent implements OnInit {
   constructor(
     private experienciaService: ExperienciaService,
     private activatedRouter: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private tokenService:TokenService
   ) { }
-
+  isLogged=false;
   ngOnInit(): void {
+    if(this.tokenService.getToken()){
+      this.isLogged=true;
+    }else{
+      this.isLogged=false;
+    }
     const id = this.activatedRouter.snapshot.params['id'];
     this.experienciaService.detail(id).subscribe(
       data => {

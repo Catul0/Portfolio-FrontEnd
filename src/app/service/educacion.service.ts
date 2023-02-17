@@ -7,8 +7,8 @@ import { Educacion } from '../model/educacion';
   providedIn: 'root'
 })
 export class EducacionService {
-
-  eduURL = 'http://localhost:8080/educacion/'
+  eduURL= 'https://backend-ze76.onrender.com/educacion/'
+  //eduURL = 'http://localhost:8080/educacion/'
   constructor(private httpClient: HttpClient) { }
   public lista():Observable<Educacion[]>{
     return this.httpClient.get<Educacion[]>(this.eduURL + 'lista');

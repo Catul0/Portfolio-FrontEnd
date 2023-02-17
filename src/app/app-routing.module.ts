@@ -11,11 +11,11 @@ import { EditarProyectoComponent } from './componentes/proyectos/editar-proyecto
 const routes: Routes = [
     {path: '',redirectTo:'home', pathMatch:'full'},
     {path:'home', component:HomeComponent},
-    {path:'sjd89/:id', component:EditInfoComponent},
-    {path:'H05k/:id', component:EditarExperienciaComponent},
-    {path:'s9j3/:id', component:EditarEducacionComponent},
-    {path:'sd3k/:id', component:EditarHabilidadComponent},
-    {path: 's01s/:id', component:EditarProyectoComponent},
+    {path:'editarInformacion/:id', component:EditInfoComponent},
+    {path:'editarExperiencia/:id', component:EditarExperienciaComponent},
+    {path:'editarEducacion/:id', component:EditarEducacionComponent},
+    {path:'editarHabilidad/:id', component:EditarHabilidadComponent},
+    {path: 'editarProyecto/:id', component:EditarProyectoComponent},
     {path:'editarImg/:id', component:EditarFotoComponent}
     
 ];

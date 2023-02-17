@@ -12,7 +12,7 @@
         </div>
     </nav>
 <app-portada></app-portada>
-<div class="card" *ngIf="expe">
+<div class="card" *ngIf="expe and isLogged==true">
 <form 
     class="add-form"
     style="width: 98%; margin-left: 1%;"
@@ -50,5 +50,8 @@
         Actualizar
     </button>
 </form>
+</div>
+<div *ngIf="isLogged==false">
+    <h5>NO TIENES ACCESO A ESTO</h5>
 </div>
 <app-footer></app-footer>

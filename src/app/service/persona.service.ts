@@ -6,7 +6,8 @@ import { Persona } from '../model/persona';
   providedIn: 'root'
 })
 export class PersonaService {
-  URL = 'http://localhost:8080/persona/';
+  URL = 'https://backend-ze76.onrender.com/persona/';
+  //URL = 'http://localhost:8080/persona/';
   constructor(private httpClient: HttpClient) { }
 
   public getPersona():  Observable<Persona>{

@@ -13,7 +13,7 @@
         <div *ngFor="let habilidad of habilidad " class="col-sm-4 col-md-4 col-lg-4">
             <div class="col" style="margin-top: 5px;">
                 <div class="card">
-                    <div *ngIf="isLogged" routerLink="/sd3k/{{habilidad.id}}" class="btn btn-primary"
+                    <div *ngIf="isLogged" routerLink="/editarHabilidad/{{habilidad.id}}" class="btn btn-primary"
                         style="position: absolute; right: 48px; top: 3px; z-index: 3; background-color: #777; border-color: #777;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-pen" viewBox="0 0 16 16">

@@ -7,7 +7,8 @@ import { Experiencia } from '../model/experiencia';
   providedIn: 'root'
 })
 export class ExperienciaService {
-  expURL = 'http://localhost:8080/experiencia/'
+  expURL = 'https://backend-ze76.onrender.com/experiencia/'
+  //expURL = 'http://localhost:8080/experiencia/'
   constructor(private httpClient: HttpClient) { }
   public lista():Observable<Experiencia[]>{
     return this.httpClient.get<Experiencia[]>(this.expURL + 'lista');

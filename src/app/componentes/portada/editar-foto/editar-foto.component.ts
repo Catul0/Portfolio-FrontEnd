@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Persona } from 'src/app/model/persona';
 import { ImagenService } from 'src/app/service/imagen.service';
 import { PersonaService } from 'src/app/service/persona.service';
+import { TokenService } from 'src/app/service/token.service';
 @Component({
   selector: 'app-editar-foto',
   templateUrl: './editar-foto.component.html',
@@ -14,11 +15,17 @@ export class EditarFotoComponent implements OnInit {
   constructor(
     private personaService:PersonaService,
     private activatedRouter:ActivatedRoute,
+    private tokenService:TokenService,
     private router:Router,
     public imagenService:ImagenService
   ) { }
-
+  isLogged=false;
   ngOnInit(): void {
+    if(this.tokenService.getToken()){
+      this.isLogged=true;
+    }else{
+      this.isLogged=false;
+    }
     const id = this.activatedRouter.snapshot.params['id'];
     this.personaService.detail(id).subscribe(
       data => {

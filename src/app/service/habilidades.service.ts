@@ -7,7 +7,8 @@ import { Habilidades } from '../model/habilidades';
   providedIn: 'root'
 })
 export class HabilidadesService {
-  skillsURL = 'http://localhost:8080/habilidades/'
+  skillsURL = 'https://backend-ze76.onrender.com/habilidades/'
+  //skillsURL = 'http://localhost:8080/habilidades/'
   constructor(private httpClient: HttpClient) { }
   public lista():Observable<Habilidades[]>{
     return this.httpClient.get<Habilidades[]>(this.skillsURL + 'lista');
