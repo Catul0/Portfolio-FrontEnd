@@ -14,7 +14,7 @@
     </div>
 </nav>
 <app-portada></app-portada>
-<div class="card" *ngIf="persona">
+<div class="card" *ngIf="isLogged">
     <form class="add-form" style="width: 98%; margin-left: 1%;" (ngSubmit)="onUpdateInfo()" novalidate #f="ngForm">
         <h5>Editar Nombre</h5>
         <div class="form-group">
@@ -51,5 +51,8 @@
             Actualizar
         </button>
     </form>
+</div>
+<div *ngIf="!isLogged">
+    <h5>NO TIENES ACCESO A ESTO</h5>
 </div>
 <app-footer></app-footer>

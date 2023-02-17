@@ -14,7 +14,7 @@
     </div>
 </nav>
 <app-portada></app-portada>
-<div class="card" *ngIf="persona and isLogged==true" >
+<div class="card" *ngIf="isLogged" >
     <form>
         <div class="form-group">
             <h2>Cambiar Foto de Perfil</h2>(debe esperar que se cargue la vista previa de la imagen seleccionada, una vez cargada la vista previa la imagen ya se ha guardado)<p></p>
@@ -30,7 +30,7 @@
     </form>
     
 </div>
-<div *ngIf="isLogged==false">
+<div *ngIf="!isLogged">
     <h5>NO TIENES ACCESO A ESTO</h5>
 </div>
 <app-footer></app-footer>

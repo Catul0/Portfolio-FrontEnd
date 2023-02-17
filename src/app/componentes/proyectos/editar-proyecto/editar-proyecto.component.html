@@ -12,7 +12,7 @@
         </div>
     </nav>
 <app-portada></app-portada>
-<div class="card" *ngIf="proyecto and isLogged==true">
+<div class="card" *ngIf="isLogged">
 <form 
     class="add-form"
     style="width: 98%; margin-left: 1%;"
@@ -63,7 +63,7 @@
     </button>
 </form>
 </div>
-<div *ngIf="isLogged==false">
+<div *ngIf="!isLogged">
     <h5>NO TIENES ACCESO A ESTO</h5>
 </div>
 <app-footer></app-footer>
