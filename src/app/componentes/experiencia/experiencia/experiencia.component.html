@@ -1,4 +1,4 @@
-<div class="card" style="margin-top: 25px;" style="background-color: rgb(33,37,41); color: rgb(0, 0, 0);">
+<div class="card" style="padding-bottom: 35px;padding-top: 10px;margin: auto; background: none; border: none; color: rgb(255, 255, 255); width: 80%;">
     <div style="margin-bottom: 35px;">
         <button 
             (click)="abrirAgragarExperiencia()" 
@@ -9,16 +9,15 @@
             {{text}}
         </button>
     </div>
-    <h3  class="card-header text-center text" style="margin-top: 20px; color: rgb(255, 255, 255);">Experiencia Laboral</h3>
+    <h2>Experiencia Laboral</h2>
+    <hr />
     <app-nueva-experiencia *ngIf="desplegar and isLogged"></app-nueva-experiencia>
-    <div  style="margin-top: 25px;">
-        <div class="card-body"  *ngFor="let Experiencia of experiencia">
-            <div class="col-lg-1"></div>
+        <div class="card-body" style="color:black"  *ngFor="let Experiencia of experiencia">
             <div class="col-lg-11" style="width: 100%;">
-                <table class="table" class="card" >
+                <table class="table" style="background: white ;" class="card" >
                     <tr >
                         <div class="card-header">
-                            <h5 class="card-title">{{Experiencia.nombreExperiencia}}</h5>
+                            <h3 class="card-title">{{Experiencia.nombreExperiencia}}</h3>
                         </div>
                         <td class="col-lg-3">
                             <div *ngIf="isLogged" routerLink="/editarExperiencia/{{Experiencia.id}}" class="btn btn-primary"
@@ -53,6 +52,5 @@
                 </table>
             </div>
         </div>
-    </div>
 
 </div>

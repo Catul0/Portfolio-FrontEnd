@@ -1,20 +1,15 @@
 <form class="add-form" (ngSubmit)="onCreate()" novalidate #f="ngForm" style="width: 98%; margin-left: 1%;">
-    <div class="form-control">
-        <label for="nombreExperiencia">Nombre de la Experiencia</label>
+    <div class="form-control" style="background: none; border:none; width: 100%;" >
+        <label for="nombreExperiencia" style="color:white">Nombre de la Experiencia</label>
         <input type="text" class="form-control" name="nombreExperiencia" id="nombreExperiencia"
             [(ngModel)]="nombreExperienica" required placeholder="Añade un numbre a la Experiencia">
-    </div>
-    <div class="form-control">
-        <label for="descripcionExperiencia">Descripcion</label>
+        <label for="descripcionExperiencia" style="color:white">Descripcion</label>
         <textarea class="form-control" aria-label="With textarea" name="descripcionExperiencia"
             id="descripcionExperiencia" [(ngModel)]="descripcionExperiencia" required
             placeholder="Añade una nueva Descripcion"></textarea>
-    </div>
-    <div class="form-control">
-        <label for="periodoExperiencia">Periodo</label>
+        <label for="periodoExperiencia" style="color:white">Periodo</label>
         <input type="text" class="form-control" name="periodoExperiencia" id="periodoExperiencia"
             [(ngModel)]="periodoExperiencia" required placeholder="Añade el perido de trabajo">
-
     </div>
-    <input type="submit" value="Guardar Cambios" class="btn btn-block" style="width: 100%; margin-left: 0%;">
+    <input type="submit" value="Guardar Cambios" style="width: 98%; margin:auto;" class="btn btn-block">
 </form>

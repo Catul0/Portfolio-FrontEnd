@@ -3,8 +3,8 @@
     (ngSubmit)="onCreateEducacion()" novalidate #f="ngForm"
     style="width: 98%; margin-left: 1%;"
 >
-    <div class="form-control">
-        <label for="nombreExperiencia">Titulo Academico</label>
+    <div class="form-control" style="background: none; border:none; width: 100%; ">
+        <label for="nombreExperiencia" style="color:white">Titulo Academico</label>
         <input 
             type="text" 
             class="form-control"
@@ -13,9 +13,7 @@
             [(ngModel)]="titulo" required
             placeholder="Añade un Titulo"
         >
-    </div>
-    <div class="form-control">
-        <label for="nombreExperiencia">Institucion Academica</label>
+        <label for="nombreExperiencia" style="color:white">Institucion Academica</label>
         <input 
             type="text" 
             class="form-control"
@@ -24,9 +22,7 @@
             [(ngModel)]="institucion" required
             placeholder="Añade nombre a la Institucion Academica"
         >
-    </div>
-    <div class="form-control">
-        <label for="descripcion">Descripcion</label>
+        <label for="descripcion" style="color:white">Descripcion</label>
         <input 
             type="text"
             class="form-control" 
@@ -36,5 +32,5 @@
             placeholder="Añade una nueva Descripcion de Educacion"
         >
     </div>
-    <input type="submit" value="Guardar Cambios" class="btn btn-block" style="width: 100%; margin-left: 0%;">
+    <input type="submit" style="width: 98%; margin:auto;"value="Guardar Cambios" class="btn btn-block" >
 </form>

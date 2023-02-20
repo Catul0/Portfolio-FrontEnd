@@ -1,3 +1,4 @@
+<div style=" background: linear-gradient(to top, #16222a, #3a6073);">
 <nav class="navbar navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
         <img src="https://argentinaprograma.inti.gob.ar/pluginfile.php/1/theme_moove/logo/1674868095/Diseño%20sin%20título%20%2817%29.png"
@@ -14,17 +15,18 @@
     </div>
 </nav>
 <app-portada></app-portada>
-<div class="card" *ngIf="isLogged" >
+<div class="card" *ngIf="isLogged" style="background: none; border:none; width: 80%; margin:auto;">
     <form>
         <div class="form-group">
-            <h2>Cambiar Foto de Perfil</h2>(debe esperar que se cargue la vista previa de la imagen seleccionada, una vez cargada la vista previa la imagen ya se ha guardado)<p></p>
+            <h2 style="color:white">Cambiar Foto de Perfil</h2>
+            <p style="color:white">(debe esperar que se cargue la vista previa de la imagen seleccionada, una vez cargada la vista previa la imagen ya se ha guardado)</p>
             <input type="file" class="form-control" id="img" name="img"  [(ngModel)]="persona.img" (change)="cambiarImagen($event)" accept=".png,.jpg,.jpeg">
         </div>
         
         <div class="imagen">
             <img [src]="imagenService.url" width="200px">
         </div>
-        <button routerLink="/home" class="btn btn-block" style="width: 100%; margin-left: 0%;">
+        <button (click)="funcion()" class="btn btn-block" style="width: 100%; margin-left: 0%;">
             Volver al Inicio
         </button>
     </form>
@@ -34,3 +36,4 @@
     <h5>NO TIENES ACCESO A ESTO</h5>
 </div>
 <app-footer></app-footer>
+</div>

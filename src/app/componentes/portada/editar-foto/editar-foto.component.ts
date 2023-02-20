@@ -36,6 +36,9 @@ export class EditarFotoComponent implements OnInit {
       }
     )
   }
+  funcion(){
+    this.router.navigate(['']);
+  }
   cambiarImagen($event:any){
     const id = this.activatedRouter.snapshot.params['id'];
     const name = "perfil_" + id;

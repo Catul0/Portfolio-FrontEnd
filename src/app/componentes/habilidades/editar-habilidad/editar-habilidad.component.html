@@ -1,49 +1,52 @@
-<nav class="navbar navbar-dark bg-dark fixed-top">
-    <div class="container-fluid">
-        <img src="https://argentinaprograma.inti.gob.ar/pluginfile.php/1/theme_moove/logo/1674868095/Diseño%20sin%20título%20%2817%29.png"
-            style="height: 50px;" alt="">
-        <button routerLink="/home" class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                class="bi bi-house-door-fill" viewBox="0 0 16 16">
-                <path
-                    d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z" />
-            </svg>
-        </button>
-    </div>
-</nav>
-<app-portada></app-portada>
-<div class="card" *ngIf="isLogged">
-    <form class="add-form" style="width: 98%; margin-left: 1%;" (ngSubmit)="onUpdateHabilidad()" novalidate #f="ngForm">
-        <h2>Editar Experiencia</h2>
-        <div class="form-group">
-            <label for="nombreSkill">Nombre de la Experiencia</label>
-            <input type="text" class="form-control" name="nombreExperiencia" id="nombreSkill"
-                [(ngModel)]="habilidad.nombreSkill" required placeholder="{{habilidad.nombreSkill}}">
+<div style=" background: linear-gradient(to top, #16222a, #3a6073);">
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <img src="https://argentinaprograma.inti.gob.ar/pluginfile.php/1/theme_moove/logo/1674868095/Diseño%20sin%20título%20%2817%29.png"
+                style="height: 50px;" alt="">
+            <button routerLink="/home" class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z" />
+                </svg>
+            </button>
         </div>
-        <div class="form-group">
-            <label for="descripcionSkill">Descripcion</label>
-            <textarea class="form-control" aria-label="With textarea" name="descripcionSkill" id="descripcionSkill"
-                [(ngModel)]="habilidad.descripcionSkill" required></textarea>
-        </div>
-        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-            <div class="btn-group mr-2" style="display: contents;" role="group" aria-label="First group">
-                <button type="button" style="background-color: rgb(18, 216, 18) ;" (click)="tomarNivelBajo()"
-                    class="btn btn-secondary">Medio Bajo</button>
-                <button type="button" style="background-color: rgb(13, 153, 13);" (click)="tomarNivelMedio()"
-                    class="btn btn-secondary">Medio</button>
-                <button type="button" style="background-color: green;" (click)="tomarNivelBueno()"
-                    class="btn btn-secondary">Bueno</button>
-                <button type="button" style="background-color: rgb(7, 88, 7);" (click)="tomarNivelMuyBueno()"
-                    class="btn btn-secondary">Muy Bueno</button>
+    </nav>
+    <app-portada></app-portada>
+    <div class="card" *ngIf="isLogged" style="background: none; border:none; width: 80%; margin:auto;">
+        <form class="add-form" style="background: none; border:none; width: 100%; " (ngSubmit)="onUpdateHabilidad()"
+            novalidate #f="ngForm">
+            <h2 style="color:white">Editar Habilidad</h2>
+            <div class="form-group">
+                <label for="nombreSkill" style="color:white">Nombre de la Habilidad</label>
+                <input type="text" class="form-control" name="nombreExperiencia" id="nombreSkill"
+                    [(ngModel)]="habilidad.nombreSkill" required placeholder="{{habilidad.nombreSkill}}">
             </div>
-        </div>
-        <button class="btn btn-block" style="width: 100%; margin-left: 0%;">
-            Actualizar
-        </button>
-    </form>
+            <div class="form-group">
+                <label for="descripcionSkill" style="color:white">Descripcion</label>
+                <textarea class="form-control" aria-label="With textarea" name="descripcionSkill" id="descripcionSkill"
+                    [(ngModel)]="habilidad.descripcionSkill" required></textarea>
+            </div>
+            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                <div class="btn-group mr-2" style="display: contents;" role="group" aria-label="First group">
+                    <button type="button" style="background-color: rgb(18, 216, 18) ;" (click)="tomarNivelBajo()"
+                        class="btn btn-secondary">Medio Bajo</button>
+                    <button type="button" style="background-color: rgb(13, 153, 13);" (click)="tomarNivelMedio()"
+                        class="btn btn-secondary">Medio</button>
+                    <button type="button" style="background-color: green;" (click)="tomarNivelBueno()"
+                        class="btn btn-secondary">Bueno</button>
+                    <button type="button" style="background-color: rgb(7, 88, 7);" (click)="tomarNivelMuyBueno()"
+                        class="btn btn-secondary">Muy Bueno</button>
+                </div>
+            </div>
+            <button class="btn btn-block" style="width: 100%; margin-left: 0%;">
+                Actualizar
+            </button>
+        </form>
+    </div>
+    <div *ngIf="!isLogged" style="height: 700px;" >
+        <h5>NO TIENES ACCESO A ESTO</h5>
+    </div>
+    <app-footer style="border-bottom:  0;"></app-footer>
 </div>
-<div *ngIf="!isLogged">
-    <h5>NO TIENES ACCESO A ESTO</h5>
-</div>
-<app-footer></app-footer>

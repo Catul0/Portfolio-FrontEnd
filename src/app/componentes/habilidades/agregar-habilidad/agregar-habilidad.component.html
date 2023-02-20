@@ -1,16 +1,14 @@
 <form class="add-form" (ngSubmit)="onCreateSkill()">
-    <div class="form-control">
-        <label for="nombreExperiencia">Nombre de la Habilidad</label>
+    <div class="form-control" style="background: none; border:none; width: 100%; ">
+        <label for="nombreExperiencia" style="color:white">Nombre de la Habilidad</label>
         <input type="text" class="form-control" name="nombreSkill" id="nombreSkill" [(ngModel)]="nombreSkill" required
             placeholder="Añade un numbre a la Habilidad">
-    </div>
-    <div class="form-control">
-        <label for="descripcionSkill">Descripcion</label>
+        <label for="descripcionSkill" style="color:white">Descripcion</label>
         <textarea class="form-control" aria-label="With textarea" name="descripcionSkill" id="descripcionSkill"
             [(ngModel)]="descripcionSkill" required placeholder="Añade una nueva Descripcion a la habilidad"></textarea>
     </div>
-    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-        <div class="btn-group mr-2" style="display: contents;" role="group" aria-label="First group">
+    <div class="btn-toolbar" role="toolbar" style="width: 98%; margin:auto; margin-bottom: 5px; " aria-label="Toolbar with button groups">
+        <div class="btn-group mr-2" style="display: contents; width: 100%; " role="group" aria-label="First group">
             <button type="button" style="background-color: rgb(18, 216, 18) ;" (click)="tomarNivelBajo()"
                 class="btn btn-secondary">Medio Bajo</button>
             <button type="button" style="background-color: rgb(13, 153, 13);" (click)="tomarNivelMedio()"
@@ -21,5 +19,5 @@
                 class="btn btn-secondary">Muy Bueno</button>
         </div>
     </div>
-    <input type="submit" value="Guardar Habilidad" class="btn btn-block">
+    <input type="submit" style="width: 98%; margin:auto;" value="Guardar Habilidad" class="btn btn-block">
 </form>

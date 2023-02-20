@@ -1,3 +1,4 @@
+<div style=" background: linear-gradient(to top, #16222a, #3a6073);">
 <nav class="navbar navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
         <img src="https://argentinaprograma.inti.gob.ar/pluginfile.php/1/theme_moove/logo/1674868095/Diseño%20sin%20título%20%2817%29.png"
@@ -14,35 +15,34 @@
     </div>
 </nav>
 <app-portada></app-portada>
-<div class="card" *ngIf="isLogged">
-    <form class="add-form" style="width: 98%; margin-left: 1%;" (ngSubmit)="onUpdateInfo()" novalidate #f="ngForm">
-        <h5>Editar Nombre</h5>
+<div class="card" *ngIf="isLogged"  style="background: none; border:none; width: 80%; margin:auto;">
+    <form class="add-form" style="background: none; border:none; width: 100%; "(ngSubmit)="onUpdateInfo()" novalidate #f="ngForm">
+        <h2 style="color:white" >Editar Informacion Personal</h2>
         <div class="form-group">
-            <label for="sobreMi">Nombre </label>
+            <label for="nombre" style="color:white"> Nombre </label>
             <input type="text" class="form-control" name="nombre" id="nombre" [(ngModel)]="persona.nombre" required
                 placeholder="{{persona.nombre}}">
-            <label for="sobreMi">Apellido </label>
+                <label for="apellido" style="color:white"> Apellido </label>
             <input type="text" class="form-control" name="apellido" id="apellido" [(ngModel)]="persona.apellido" required
                 placeholder="{{persona.apellido}}">
         </div>
-        <h5>Link Curriculum</h5>
         <div class="form-group">
+            <label for="curriculum" style="color:white"> Link Curriculum </label>
             <input type="text" class="form-control" name="curriculum" id="curriculum" [(ngModel)]="persona.curriculum" required
                 placeholder="{{persona.curriculum}}">
         </div>
-        <h5>Link Instagram</h5>
         <div class="form-group">
+            <label for="instagram" style="color:white"> Link Instagram </label>
             <input type="text" class="form-control" name="instagram" id="instagram" [(ngModel)]="persona.instagram" required
                 placeholder="{{persona.instagram}}">
         </div>
-        <h5>Link Email</h5>
         <div class="form-group">
+            <label for="email" style="color:white"> Link Email </label>
             <input type="text" class="form-control" name="email" id="email" [(ngModel)]="persona.email" required
                 placeholder="{{persona.email}}">
         </div>
-        <h5>Editar Sobre Mi</h5>
         <div class="form-group">
-            <label for="sobreMi">Sobre Mi</label>
+            <label for="sobreMi" style="color:white"> Sobre Mi </label>
             <textarea class="form-control" aria-label="With textarea" name="sobreMi" id="sobreMi" [(ngModel)]="persona.sobreMi" required
             placeholder="{{persona.sobreMi}}"></textarea>
             
@@ -52,7 +52,8 @@
         </button>
     </form>
 </div>
-<div *ngIf="!isLogged">
+<div *ngIf="!isLogged" style="height: 700px;">
     <h5>NO TIENES ACCESO A ESTO</h5>
 </div>
 <app-footer></app-footer>
+</div>

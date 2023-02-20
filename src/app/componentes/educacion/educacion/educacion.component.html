@@ -1,4 +1,4 @@
-<div class="card" style="margin-top: 25px; background-color: rgb(33,37,41); color: rgb(0, 0, 0);">
+<div class="card" style="padding-bottom: 35px;padding-top: 10px;margin: auto; background:none; border:none; color: rgb(255, 255, 255); width: 80%;">
     <div class="col-lg-2" style="margin-bottom: 35px;">
         <button 
             (click)="abrirAgragarExperiencia()" 
@@ -9,14 +9,13 @@
             {{text}}
         </button>
     </div>
-    <h3 class="card-header text-center text" style="margin-top: 20px; color:rgb(255, 255, 255);">
-        Estudios Academicos
-    </h3>
+    <h2>Estudios Academicos</h2>
+    <hr/>
     <app-agregar-educacion *ngIf="desplegarAgregarEdu and isLogged"></app-agregar-educacion>
-    <div style="margin-top: 25px;">
+    <div>
         <div class="card-body"  *ngFor="let edu of educacion">
             <div class="col-lg-1"></div>
-            <div class="col-lg-11" style="width: 100%;">
+            <div class="col-lg-11" style="width: 100%; color: black;">
                 <table class="table" class="card" >
                     <tr >
                         <div class="card-header">

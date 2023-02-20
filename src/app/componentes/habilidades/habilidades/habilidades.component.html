@@ -1,15 +1,15 @@
-<div class="card" style="padding-bottom: 35px;padding-top: 10px;  background-color: rgb(33,37,41); color: rgb(255, 255, 255);">
+<div class="card"
+    style="padding-bottom: 35px;padding-top: 10px;margin: auto; background:none; border: none; color: rgb(255, 255, 255); width: 80%;">
     <div class="col-lg-2" style="margin-bottom: 35px;">
         <button (click)="abrirAgragarHabilidad()" type="button" class="btn" *ngIf="isLogged"
             style="position: absolute; right: 3px; top: 3px; z-index: 3;color: white; background-color: #777; border-color: #777;">
             {{text}}
         </button>
     </div>
-    <h3 class="card-header text-center text" style="margin-top: 20px;margin-bottom: 60px;">
-        Habilidades
-    </h3>
+    <h2>Habilidades</h2>
+    <hr />
     <app-agregar-habilidad *ngIf="desplegarHab and isLogged"></app-agregar-habilidad>
-    <div class="row" style="margin-top: 5px;" style="margin-left: 10px;margin-right:10px;margin-bottom: 15px;">
+    <div class="row" style="margin-left: 10px;margin-right:10px;margin-bottom: 15px;">
         <div *ngFor="let habilidad of habilidad " class="col-sm-4 col-md-4 col-lg-4">
             <div class="col" style="margin-top: 5px;">
                 <div class="card">
